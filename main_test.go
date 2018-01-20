@@ -41,29 +41,29 @@ func TestCalculateHashesHello(t *testing.T) {
 		path.Join(utdir, "hello.txt"),
 	}
 
-	var got filemap
-	var should filemap
+	var got Filemap
+	var should Filemap
 
 	got = CalculateHashes(files, "md5")
-	should = filemap{
+	should = Filemap{
 		path.Join(utdir, "hello.txt"): helloMd5,
 	}
 	assert.Equal(t, should, got)
 
 	got = CalculateHashes(files, "sha1")
-	should = filemap{
+	should = Filemap{
 		path.Join(utdir, "hello.txt"): helloSha1,
 	}
 	assert.Equal(t, should, got)
 
 	got = CalculateHashes(files, "sha256")
-	should = filemap{
+	should = Filemap{
 		path.Join(utdir, "hello.txt"): helloSha256,
 	}
 	assert.Equal(t, should, got)
 
 	got = CalculateHashes(files, "sha512")
-	should = filemap{
+	should = Filemap{
 		path.Join(utdir, "hello.txt"): helloSha512,
 	}
 	assert.Equal(t, should, got)
@@ -74,29 +74,29 @@ func TestCalculateHashesLinux(t *testing.T) {
 		path.Join(utdir, "linux-4.9.77.tar.xz"),
 	}
 
-	var got filemap
-	var should filemap
+	var got Filemap
+	var should Filemap
 
 	got = CalculateHashes(files, "md5")
-	should = filemap{
+	should = Filemap{
 		path.Join(utdir, "linux-4.9.77.tar.xz"): linuxMd5,
 	}
 	assert.Equal(t, should, got)
 
 	got = CalculateHashes(files, "sha1")
-	should = filemap{
+	should = Filemap{
 		path.Join(utdir, "linux-4.9.77.tar.xz"): linuxSha1,
 	}
 	assert.Equal(t, should, got)
 
 	got = CalculateHashes(files, "sha256")
-	should = filemap{
+	should = Filemap{
 		path.Join(utdir, "linux-4.9.77.tar.xz"): linuxSha256,
 	}
 	assert.Equal(t, should, got)
 
 	got = CalculateHashes(files, "sha512")
-	should = filemap{
+	should = Filemap{
 		path.Join(utdir, "linux-4.9.77.tar.xz"): linuxSha512,
 	}
 	assert.Equal(t, should, got)
